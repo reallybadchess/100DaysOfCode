@@ -1,0 +1,30 @@
+SELECT * FROM film;
+-----------------
+
+-- What is the minimum replacement cost?
+
+SELECT MIN(replacement_cost)
+FROM film;
+
+-- The minimum replacement cost is 9.99
+
+-----------------------------------------
+-- Maximum replaccement cost?
+
+SELECT MAX(replacement_cost)
+FROM film;
+
+-- The maximum replacaement cost is 29.99
+-----------------------------------------
+-- Count
+SELECT COUNT(*)
+FROM film;
+
+-----------------------------------------
+--Average replacement cost
+SELECT ROUND(AVG(replacement_cost),2)
+FROM film;
+
+-----------------------------------------
+--
+
