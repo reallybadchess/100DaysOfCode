@@ -1,0 +1,19 @@
+--Find the staff member ID who handled the most payments
+SELECT staff_id, COUNT(amount)
+FROM payment
+GROUP BY staff_id
+-- staff_id: 2 total handled payments: 7304
+
+----------------------------
+--What is the average replacement cost per MPAA rating
+SELECT rating, ROUND(AVG(replacement_cost),2)
+FROM film
+GROUP BY rating;
+
+----------------------------
+-- What are  the customer_ids of the top 5 customerrs by total spent?
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC
+LIMIT 5;

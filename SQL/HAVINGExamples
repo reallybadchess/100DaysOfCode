@@ -1,0 +1,24 @@
+--
+SELECT customer_id, SUM(amount)
+FROM payment
+WHERE amount NOT IN (174, 87, 477)
+GROUP BY customer_id;
+-- Instead we can try
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+HAVING SUM(amount) > 100;
+-- All sums are now greater than 100
+-------------------------
+--Using HAVING with a COUNT call
+SELECT store_id, COUNT(customer_id) 
+FROM customer
+GROUP BY store_id;
+-- Gives a count of customers per store
+
+---------------
+-- Now selecting only stores that have > 300 customers
+SELECT store_id, COUNT(customer_id)
+FROM customer
+GROUP BY store_id
+HAVING COUNT(customer_id) > 300;

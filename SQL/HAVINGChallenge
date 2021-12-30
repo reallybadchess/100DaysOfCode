@@ -1,0 +1,20 @@
+-- Task 1: What customer ids have >= 40 transactions
+SELECT customer_id, COUNT(*)
+FROM payment
+GROUP BY customer_id
+HAVING COUNT(*) >= 40;
+--------------------
+-- cust ids who spent more > 100 with staff id member 2
+SELECT customer_id, staff_id, SUM(amount)
+FROM payment
+GROUP BY staff_id, customer_id
+HAVING SUM(amount) > 100 AND staff_id = 2;
+-- This was my sol'n and it worked
+
+
+-- The actual sol'n was a tiny bit different
+SELECT customer_id, SUM(amount)
+FROM payment
+WHERE staff_id = 2
+GROUP BY customer_id
+HAVING SUM(amount) > 100;

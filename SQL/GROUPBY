@@ -1,0 +1,43 @@
+-- Example layout
+
+SELECT category_col, AGG(data_col)
+FROM table
+GROUP BY category_col
+
+-- Group by must appear right after a from or where statement
+----------------------------
+SELECT * FROM payment;
+
+----------------------------
+-- Simple group by example
+SELECT customer_id 
+FROM payment
+GROUP BY customer_id
+ORDER BY customer_id;
+-----------------------------
+-- What customer is spending the most money?
+SELECT customer_id, SUM(amount)
+FROM payment
+GROUP BY customer_id
+ORDER BY SUM(amount) DESC
+-- customer_id: 148 amount: 211.55
+
+------------------------------
+-- what are the total transactions for each customer?
+SELECT customer_id, COUNT(amount)
+FROM payment
+GROUP BY customer_id
+ORDER BY COUNT(amount) DESC
+-- customer_id: 148 transactions: 45
+-------------------------------
+--
+SELECT customer_id, staff_id, SUM(amount)
+FROM payment
+GROUP BY customer_id, staff_id
+ORDER BY staff_id, customer_id;
+-------------------------------
+-- group by on a date
+SELECT DATE(payment_date), SUM(amount)
+FROM payment
+GROUP BY DATE(payment_date)
+ORDER BY SUM(amount);
