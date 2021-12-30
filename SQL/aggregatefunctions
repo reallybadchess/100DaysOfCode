@@ -26,5 +26,8 @@ SELECT ROUND(AVG(replacement_cost),2)
 FROM film;
 
 -----------------------------------------
---
+-- Sum to replace all the films
+SELECT SUM(replacement_cost)
+FROM film;
+
 
