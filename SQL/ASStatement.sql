@@ -31,7 +31,7 @@ HAVING total_spent > 100;
 -- This is because an alias gets assigned at the very end of the query
 
 -- It also doesn't work in the WHERE statement
--- This is wrong and yields a non existant column
+-- This is wrong and yields an  error
 SELECT customer_id, amount AS new_name
 FROM payment
 WHERE new_name > 2;
