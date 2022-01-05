@@ -61,4 +61,3 @@ WHERE EXISTS
  AND amount > 11);
 
 
-
