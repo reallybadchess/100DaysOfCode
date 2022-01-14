@@ -21,4 +21,12 @@ TABLE tableName
 DROP COLUMN colName1,
 DROP COLUMN colName2;
 
+----------
+-- DROP example
 
+ALTER
+TABLE newInfo
+DROP COLUMN people;
+
+SELECT * 
+FROM newInfo;
