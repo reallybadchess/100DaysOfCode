@@ -19,3 +19,28 @@ WHERE
 -- WHERE with operators (AND | OR)
 
 -- First a single condition
+
+-- 1. Get all English language movies
+-- Filter by rows based on a Text value
+
+SELECT *
+FROM movies;
+
+SELECT * 
+FROM movies
+WHERE
+	movie_lang = 'English';
+	
+-- 2. Get all Japanese language movies
+SELECT * 
+FROM movies
+WHERE
+	movie_lang = 'Japanese';
+	
+-- 3. Use mutiple conditions, get all english language movies AND age certificate = 18
+
+SELECT *
+FROM movies
+WHERE
+	movie_lang = 'English' AND
+	age_certificate = '18';
